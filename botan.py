@@ -1,6 +1,4 @@
-<<<<<<< HEAD
-﻿# -*- coding: utf-8 -*-
-# Modified for pyTelegramBotAPI (https://github.com/eternnoir/pyTelegramBotAPI/)
+
 
 import requests
 import json
@@ -80,4 +78,4 @@ def track(token, uid, message, name='Message'):
         print(e)
         return False
 
->>>>>>> 9c412eec9acc7a719ac3da271090d46536d9d241
+
