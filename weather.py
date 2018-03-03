@@ -1,6 +1,4 @@
 import requests, bs4
-
-
 #p5=b.select('.temperature .p5')
 #pogoda3=p5[0].getText()
 
