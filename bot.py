@@ -12,7 +12,7 @@ def handle_start(message):
     bot.send_message(message.from_user.id, 'Привет  \nMy pezduk')
 
 
-    @bot.message_handler(commands=['random'])
+@bot.message_handler(commands=['random'])
 def cmd_random(message):
     bot.send_message(message.chat.id, random.randint(1, 10))
     # Если не нужно собирать ничего, кроме количества использований, замените третий аргумент message на None
