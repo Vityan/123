@@ -6,10 +6,11 @@ import weather
 bot = telebot.TeleBot(config.token)
 random.seed()
 
+city ="";
 
 @bot.message_handler(commands=["start"]) # Обработка /start
 def handle_start(message):
-    bot.send_message(message.from_user.id, 'Привет  \nMy pezduk')
+    bot.send_message(message.from_user.id, 'Привет  \nMy ')
 
 
 @bot.message_handler(commands=['random'])
@@ -27,11 +28,18 @@ def cmd_yesorno(message):
     botan.track(config.botan_key, message.chat.id, message, 'Да или нет')
     return
 
+def handle_text(message):
+    if message.text[:7] == "Погода " or message.text[:7] == "погода " :
+        city=message.text[8:]
+    bot.send_message('Погода catched')
+    return
+        
+        
+    
 
 @bot.message_handler(commands=['weather'])
 def cmd_weather(message):
-    gorod = str(input())
-    string_weather = weather.getweather('gorod')
+    string_weather = weather.getweather(city)
     bot.send_message(message.chat.id, string_weather)
     botan.track(config.botan_key, message.chat.id, message, 'Погода')
     return
