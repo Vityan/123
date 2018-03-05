@@ -30,7 +30,7 @@ def cmd_yesorno(message):
 
 @bot.message_handler(commands=['weather'])
 def cmd_weather(message):
-    gorod=string(input())
+    gorod=str(input())
     string_weather = weather.getweather('gorod')
     bot.send_message(message.chat.id, string_weather)
     botan.track(config.botan_key, message.chat.id, message, 'Погода')
