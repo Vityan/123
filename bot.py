@@ -11,21 +11,6 @@ def handle_start(message):
     bot.send_message(message.from_user.id, 'Привет  \nMy dear friend ')
 
 
-@bot.message_handler(content_types=['text'])
-def handle_text(message):
-
-# Если пользователь отправил "привет, как тебя зовут?" отвечаем "робот я"
-   if message.text == "привет, как тебя зовут?":
-      bot.send_message(message.from_user.id, 'робот я')
-
-# Если пользователь отправил "и чо?" отвечаем "да ничо"
-   elif message.text == "и чо?":
-      bot.send_message(message.from_user.id, 'да ничо')
-
-#Если пользователь отправил слово/фразу, на которое(ую) нет ответа
-   else:
-      bot.send_message(message.from_user.id, "Извините, я Вас не понимаю")
-
 
 
 @bot.message_handler(commands=['random'])
@@ -54,6 +39,29 @@ def cmd_weather(message):
     bot.send_message(message.chat.id, string_weather)
     botan.track(config.botan_key, message.chat.id, message, 'Погода')
     return
+
+
+@bot.message_handler(content_types=['text'])
+def handle_text(message):
+
+# Если пользователь отправил "привет, как тебя зовут?" отвечаем "робот я"
+   if message.text == "привет, как тебя зовут?":
+      bot.send_message(message.from_user.id, 'робот я')
+      botan.track(config.botan_key, message.chat.id, message, 'text')
+      return  
+# Если пользователь отправил "и чо?" отвечаем "да ничо"
+   elif message.text == "и чо?":
+      bot.send_message(message.from_user.id, 'да ничо')
+      botan.track(config.botan_key, message.chat.id, message, 'text')
+      return
+
+#Если пользователь отправил слово/фразу, на которое(ую) нет ответа
+   else:
+      bot.send_message(message.from_user.id, "Извините, я Вас не понимаю")
+      botan.track(config.botan_key, message.chat.id, message, 'text')  
+      return  
+
+
 
 if __name__ == '__main__':
     global strings
