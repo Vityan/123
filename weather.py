@@ -26,10 +26,12 @@ def getweather(city):
     wrt=words[1]
     wet=words[2]
     trw=words[3]
+    div=b.select('.therm')
+    img=div[0].getText()
     
     
     p4=b.select('.today-temp')
     pogoda2=p4[0].getText()
-    string_out=''+wer+' ' 'в городе' ' '+city+' '+wrt+' '+wet+' '+trw+'  '+pogoda2+' (по данным sinoptik.com.ru)'
+    string_out=''+wer+' ' 'в городе' ' '+city+' '+wrt+' '+wet+' '+trw+'  '+pogoda2+' (по данным sinoptik.com.ru) /n'+img+'
     #print(string_out)
     return string_out
