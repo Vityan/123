@@ -41,7 +41,7 @@ def handle_text(message):
     	botan.track(config.botan_key, message.chat.id, message, 'Погода')
     	return
     else:
-	city = message.text.split(" ")[1]
+	city = message.text.split()[1]
 	bot.send_message(message.chat.id, weather.getweather(city))
 	#botan.track(config.botan_key, message.chat.id, message, 'Погода')
     	#return
