@@ -28,6 +28,6 @@ def getweather(city):
     
     p4=b.select('.today-temp')
     pogoda2=p4[0].getText()
-    string_out='+wer+'в'+city+' '+wrt+'  '+pogoda2+' (по данным sinoptik.com.ru)'
+    string_out=''+wer+'в'+city+' '+wrt+'  '+pogoda2+' (по данным sinoptik.com.ru)'
     #print(string_out)
     return string_out
