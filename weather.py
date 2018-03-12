@@ -20,10 +20,14 @@ def getweather(city):
     b=bs4.BeautifulSoup(s.text, "html.parser")
 
     p3=b.select('.today-time')
-    pogoda1=p3[1].getText()
+    pogoda1=p3[0].getText()
+    words=pogoda1.split()
+    wer=words[0:2]
+    wrt=words[2:]
+    
     
     p4=b.select('.today-temp')
     pogoda2=p4[0].getText()
-    string_out='в '+city+'е''  '+pogoda1+ '  '+pogoda2+' (по данным sinoptik.com.ru)'
+    string_out=' '+wer+ 'в'+city+' '+wrt+'  '+pogoda2+' (по данным sinoptik.com.ru)'
     #print(string_out)
     return string_out
