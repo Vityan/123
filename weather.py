@@ -22,12 +22,14 @@ def getweather(city):
     p3=b.select('.today-time')
     pogoda1=p3[0].getText()
     words=pogoda1.split()
-    wer=words[0:2]
-    wrt=words[2:]
+    wer=words[0]
+    wrt=words[1]
+    wet=words[2]
+    trw=words[3]
     
     
     p4=b.select('.today-temp')
     pogoda2=p4[0].getText()
-    string_out=''+wer+'в'+city+' '+wrt+'  '+pogoda2+' (по данным sinoptik.com.ru)'
+    string_out=''+wer+'в'+city+' '+wrt+' '+wet+trw+'  '+pogoda2+' (по данным sinoptik.com.ru)'
     #print(string_out)
     return string_out
