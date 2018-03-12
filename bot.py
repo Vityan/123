@@ -41,10 +41,10 @@ def hand_text(message):
     	 botan.track(config.botan_key, message.chat.id, message, 'Погода')
     	 return
      else:
-	 s == (message.text).split()	
-	 city == s[1]
-	 bot.send_message(message.chat.id, weather.getweather(city))
-	 #botan.track(config.botan_key, message.chat.id, message, 'Погода')
+	s == (message.text).split()	
+        city == s[1]
+	bot.send_message(message.chat.id, weather.getweather(city))
+	#botan.track(config.botan_key, message.chat.id, message, 'Погода')
     	#return
  
 
