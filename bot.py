@@ -35,7 +35,7 @@ def cmd_yesorno(message):
 
 @bot.message_handler(commands=['weather'])
 def cmd_weather(message):
-    if massege.text == "/weather":	
+    if massage.text == "/weather":	
     	string_weather = weather.getweather('Севастополь')
     	bot.send_message(message.chat.id, string_weather)
     	botan.track(config.botan_key, message.chat.id, message, 'Погода')
