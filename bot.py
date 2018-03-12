@@ -40,7 +40,7 @@ def cmd_weather(message):
     	bot.send_message(message.chat.id, string_weather)
     	botan.track(config.botan_key, message.chat.id, message, 'Погода')
     	return
-    elif:
+    else:
       bot.send_message(message.chat.id, message.text)
 	    #botan.track(config.botan_key, message.chat.id, message, 'Погода')
     	#return
