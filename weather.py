@@ -14,7 +14,7 @@ import requests, bs4
 
 #print(pogoda.strip())
 
-def get.weather(city):
+def getweather(city):
     s=requests.get('https://sinoptik.com.ru/погода-'+city)
 
     b=bs4.BeautifulSoup(s.text, "html.parser")
