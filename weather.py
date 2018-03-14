@@ -20,7 +20,7 @@ def getweather(city):
     b=bs4.BeautifulSoup(s.text, "html.parser")
 
     p3=b.select('.today-time')
-    pogoda1=p3.getText()
+    pogoda1=p3[0].getText()
     words=pogoda1.split()
     wer=words[0]
     wrt=words[1]
