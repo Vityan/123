@@ -67,11 +67,11 @@ def handle_text(message):
       botan.track(config.botan_key, message.chat.id, message, 'Погода')
       return
       else:
-        s = message.text.split()
-        city = s[1]
-        bot.send_message(message.chat.id, weather.getweather(city))
-        botan.track(config.botan_key, message.chat.id, message, 'Погода')
-        return 
+         s = message.text.split()
+         city = s[1]
+         bot.send_message(message.chat.id, weather.getweather(city))
+         botan.track(config.botan_key, message.chat.id, message, 'Погода')
+         return 
 #Если пользователь отправил слово/фразу, на которое(ую) нет ответа
    else:
       bot.send_message(message.from_user.id, "Извините, я Вас не понимаю")
