@@ -46,8 +46,8 @@ def hand_text(message):
       bot.send_message(message.from_user.id, weather.getweather(city))
       botan.track(config.botan_key, message.chat.id, message, 'Погода')
       return
-  else:   
-     pass
+  else:
+        return
 
 @bot.message_handler(content_types=['text'])
 def handle_text(message):
