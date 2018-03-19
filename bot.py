@@ -35,15 +35,15 @@ def cmd_yesorno(message):
 
 @bot.message_handler(content_types=['text'])
 def hand_text(message):
-   if message.text == "/weather":	
+  if message.text == "/weather":	
       string_weather = weather.getweather('Севастополь')
       bot.send_message(message.chat.id, string_weather)
       botan.track(config.botan_key, message.chat.id, message, 'Погода ')
       return
-   elif message.text[:8] == "/weather " :
+   elif message.text[:9] == "/weather " :
       s = message.text.split()
       city = s[1]
-      bot.send_message(message.chat.id, weather.getweather(city))
+      
       botan.track(config.botan_key, message.chat.id, message, 'Погода')
       return
  
