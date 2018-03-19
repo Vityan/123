@@ -46,14 +46,7 @@ def hand_text(message):
       bot.send_message(message.from_user.id, weather.getweather(city))
       botan.track(config.botan_key, message.chat.id, message, 'Погода')
       return
-   else:
-      return
-
-@bot.message_handler(content_types=['text'])
-def handle_text(message):
-
-# Если пользователь отправил "привет, как тебя зовут?" отвечаем "робот я"
-   if message.text == "привет, как тебя зовут?":
+   elif message.text == "привет, как тебя зовут?":
       bot.send_message(message.from_user.id, 'робот я')
       botan.track(config.botan_key, message.chat.id, message, 'text')
       return  
